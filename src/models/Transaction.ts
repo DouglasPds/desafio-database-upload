@@ -1,17 +1,33 @@
+import {
+	Column,
+	Entity,
+	PrimaryGeneratedColumn,
+	CreateDateColumn,
+	UpdateDateColumn,
+} from 'typeorm';
+
+@Entity('transactions')
 class Transaction {
-  id: string;
+	@PrimaryGeneratedColumn('uuid')
+	id: string;
 
-  title: string;
+	@Column()
+	title: string;
 
-  type: 'income' | 'outcome';
+	@Column()
+	type: 'income' | 'outcome';
 
-  value: number;
+	@Column()
+	value: number;
 
-  category_id: string;
+	@Column()
+	category_id: string;
 
-  created_at: Date;
+	@CreateDateColumn()
+	created_at: Date;
 
-  updated_at: Date;
+	@UpdateDateColumn()
+	updated_at: Date;
 }
 
 export default Transaction;

@@ -1,11 +1,11 @@
 class Category {
-  id: string;
+	id: string;
 
-  title: string;
+	title: string;
 
-  created_at: Date;
+	created_at: Date;
 
-  updated_at: Date;
+	updated_at: Date;
 }
 
 export default Category;
