@@ -18,9 +18,9 @@ class TransactionsRepository extends Repository<Transaction> {
 		const { income, outcome } = transactions.reduce(
 			(accumulated: Balance, transaction: Transaction) => {
 				if (transaction.type === 'income') {
-					accumulated.income += transaction.value;
+					accumulated.income += Number(transaction.value);
 				} else if (transaction.type === 'outcome') {
-					accumulated.outcome += transaction.value;
+					accumulated.outcome += Number(transaction.value);
 				}
 
 				return accumulated;

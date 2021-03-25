@@ -14,7 +14,7 @@ class DeleteTransactionService {
 			throw new AppError('This id is not an uuid.');
 		}
 
-		const transactionExists = transactionsRepository.findOne({
+		const transactionExists = await transactionsRepository.findOne({
 			id,
 		});
 
